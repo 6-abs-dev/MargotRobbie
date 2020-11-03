@@ -4,6 +4,7 @@ target/
 !**/src/main/**/target/
 !**/src/test/**/target/
 front-end/node_modules
+front-end/build
 
 ### STS ###
 .apt_generated
