@@ -28,22 +28,22 @@ public class MockService implements ResponseService {
     @Override
     public Message respondToMessage(String message) {
         if (greetingsWords.contains(message.toLowerCase()))
-            return new Message("Болина", "ну привет-привет");
+            return new Message("Марго", "ну привет-привет");
 
         switch (message) {
             case "как дела?":
-                return new Message("Болина", "пока не родила, ты как?");
+                return new Message("Марго", "пока не родила, ты как?");
             case "любовь":
-                return new Message("Болина", "<p>&#128512; &#128516; &#128525; &#128151;<p>");
+                return new Message("Марго", "<p>&#128512; &#128516; &#128525; &#128151;<p>");
             case "погода":
-                return new Message("Болина", getWeather());
+                return new Message("Марго", getWeather());
 //            case "погода яндекс":
 //                return new Message("Болина", getYandexForecast());
 //            case "погода мок":
 //                return new Message("Болина", getMockWeather());
             default:
                 incrementer++;
-                return new Message("Болина", "Тестовое сообщение №" + incrementer);
+                return new Message("Марго", "Тестовое сообщение №" + incrementer);
         }
     }
 

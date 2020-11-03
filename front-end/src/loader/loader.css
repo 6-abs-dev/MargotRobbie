@@ -34,10 +34,11 @@
 }
 .loadingio-spinner-dual-ball-5g7mvczz0d9 {
     width: 200px;
-    height: 200px;
-    display: inline-block;
+    height: 150px;
+    /*display: inline-block;*/
     overflow: hidden;
     background: none;
+    padding-left: 120px;
 }
 .ldio-ei07ewu16ek {
     width: 100%;

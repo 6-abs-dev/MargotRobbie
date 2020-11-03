@@ -3,7 +3,7 @@ import BolinaImg from "../1.jpg";
 import KisaImg from "../2.jpg";
 
 const Message = ({name, message, image}) => {
-    const avatar = name.toLowerCase() === "болина" ? BolinaImg : KisaImg;
+    const avatar = name.toLowerCase() === "марго" ? BolinaImg : KisaImg;
 
     return (<div className="message">
             <div>

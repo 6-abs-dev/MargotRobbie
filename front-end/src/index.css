@@ -13,14 +13,16 @@ code {
 }
 
 .intro {
-  width: 960px;
-  margin-left: auto;
-  margin-right: auto;
+  width: 100%;
+  height: 248px;
   display: flex;
+  justify-content: center;
   padding: 30px;
+  background: url("watercolor.png");
 }
 
 .rounded-circle {
+  margin-left: -200px;
   border-radius: 50%;
   height: 270px;
   padding-right: 15px;
@@ -49,6 +51,7 @@ code {
 
 .message {
   display: flex;
+  justify-content: center;
   margin-left: 100px;
   padding: 10px;
 }
@@ -56,9 +59,6 @@ code {
 .button{
   background-color: white;
   padding: 12px 28px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
   font-size: 16px;
   color: black;
   border: 2px solid black;
@@ -69,5 +69,6 @@ code {
 }
 
 .bigFont {
-  font-size: 50px
+  font-size: 35px;
+  padding-left: 10px;
 }

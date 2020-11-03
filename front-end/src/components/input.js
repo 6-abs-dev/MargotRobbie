@@ -13,72 +13,68 @@ const Input = ({messages, setMessages, sendMessage}) => {
         return (
             <Fragment>
                 <Loader/>
-                <p>Рита <strong>думает</strong> над ответом...<span className="bigFont">&#129300;</span> </p>
-
             </Fragment>
-    )
+        )
     }
 
     const inputFrame = () => {
-        return(
-        <Fragment>
-        <p>Напиши <strong>мне</strong> прямо сейчас... Я жду.</p>
-        <textarea onChange={(event => {
-            setText(event.target.value);
-            console.log(text)
-        })} value={text} className="form" name="message" id="message"/>
-        <br/>
-        <button
-        onClick={() => {
-            sendMessage(setIsThinking, text, setMessages, messages)
-        }}
-        className="button" type="submit" value="Ляпнуть не подумав...">
-        Ляпнуть не подумав...
-        </button>
+        return (
+            <Fragment>
+                <p>Напиши <strong>мне</strong> прямо сейчас... Я жду.</p>
+                <textarea onChange={(event => {
+                    setText(event.target.value);
+                    console.log(text)
+                })} value={text} className="form" name="message" id="message"/>
+                <br/>
+                <button
+                    onClick={() => {
+                        sendMessage(setIsThinking, text, setMessages, messages)
+                    }}
+                    className="button" type="submit" value="Ляпнуть не подумав...">
+                    Ляпнуть не подумав...
+                </button>
 
-        <span className="bigFont"
-        onClick={() => {
-            fetch("http://localhost:8080/image");
-            //TODO Fix showing images.
-            setMessages([{
-                name: "Болина",
-                image: "http://localhost:8080/image"
-            }, ...messages])
-        }}>&#128089;</span>
+                <span className="bigFont"
+                      onClick={() => {
+                          fetch("http://localhost:8080/image");
+                          //TODO Fix showing images.
+                          setMessages([{
+                              name: "Марго",
+                              image: "http://localhost:8080/image"
+                          }, ...messages])
+                      }}>&#128089;</span>
 
-        <span className="bigFont"
-        onClick={() => {
-            setMessages([{
-                name: "Болина",
-                message: `Я загадала ${Math.floor(Math.random() * 1000)}`
+                <span className="bigFont"
+                      onClick={() => {
+                          setMessages([{
+                              name: "Марго",
+                              message: `Я загадала ${Math.floor(Math.random() * 1000)}`
 
-            }, ...messages])
-        }}>&#127920;</span>
-        <span className="bigFont"
-        onClick={() => {
-            console.log('Clicked!')
-            fetch('http://localhost:8080/getWeather')
-                .then((res) => {
-                    return res.json()
-                })
-                .then((y) => {
-                    console.log(y.fact.temp)
-                    console.log(y.fact.condition)
-                    const responseMessage = `Сейчас ${y.fact.temp} градусов и ${y.fact.condition}`
-                    setMessages([{
-                        name: "Болина",
-                        message: responseMessage,
-                    }, ...messages])
-                })
-        }}>&#9748;</span>
-        <span className="bigFont"
-        onClick={() => {
-            setMessages([{
-                name: "Болина",
-                message: `Сейчас ${new Date().toLocaleString("ru-RU")}`
-            }, ...messages])
-        }}>&#128197;</span>
-        </Fragment>
+                          }, ...messages])
+                      }}>&#127920;</span>
+                <span className="bigFont"
+                      onClick={() => {
+                          console.log('Clicked!')
+                          fetch('http://localhost:8080/getWeather')
+                              .then((res) => {
+                                  return res.json()
+                              })
+                              .then((y) => {
+                                  const responseMessage = `Сейчас ${y.fact.temp} градусов и ${y.fact.condition}`
+                                  setMessages([{
+                                      name: "Марго",
+                                      message: responseMessage,
+                                  }, ...messages])
+                              })
+                      }}>&#9748;</span>
+                <span className="bigFont"
+                      onClick={() => {
+                          setMessages([{
+                              name: "Марго",
+                              message: `Сейчас ${new Date().toLocaleString("ru-RU")}`
+                          }, ...messages])
+                      }}>&#128197;</span>
+            </Fragment>
         )
     }
 
@@ -94,10 +90,10 @@ const Input = ({messages, setMessages, sendMessage}) => {
                      }
                  }}/>
             <div>
-                <h1>Привет красавчик... Я <strong>Рита</strong>.</h1>
+                <h1>Привет красавчик... Я <strong>Марго</strong>.</h1>
                 {isThinking ? loaderComponent() : inputFrame()}
             </div>
         </div>
     );
-    }
-    export default Input;
+}
+export default Input;

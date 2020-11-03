@@ -2,7 +2,7 @@ export default class Service {
 
     sendMessage = (setLoading, text, setMessages, messages) => {
         setLoading(true)
-        const myMessage = {name: "Киса", message: text}
+        const myMessage = {name: "Красавчик", message: text}
         setMessages([myMessage, ...messages])
         fetch(`http://localhost:8080/newMessage?message=${text}`)
             .then((res) => {
