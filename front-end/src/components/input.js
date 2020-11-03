@@ -36,12 +36,15 @@ const Input = ({messages, setMessages, sendMessage}) => {
 
                 <span className="bigFont"
                       onClick={() => {
-                          fetch("http://localhost:8080/image");
-                          //TODO Fix showing images.
-                          setMessages([{
-                              name: "Марго",
-                              image: "http://localhost:8080/image"
-                          }, ...messages])
+                          fetch("http://localhost:8080/getSexyPhoto")
+                              .then(response => response.text())
+                              .then(url=> {
+                                  setMessages([{
+                                      name: "Марго",
+                                      image: url
+                                  }, ...messages])
+                              });
+
                       }}>&#128089;</span>
 
                 <span className="bigFont"

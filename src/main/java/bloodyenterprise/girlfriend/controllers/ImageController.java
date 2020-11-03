@@ -1,11 +1,11 @@
 package bloodyenterprise.girlfriend.controllers;
 
+import bloodyenterprise.girlfriend.services.ImageResolverService;
+import lombok.AllArgsConstructor;
+import lombok.Data;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.IOUtils;
 
@@ -13,13 +13,26 @@ import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 
-@Controller
+@AllArgsConstructor
+@RestController
 public class ImageController {
+    private final ImageResolverService imageResolverService;
+
+    @CrossOrigin
+    @GetMapping(value = "/getSexyPhoto")
+    public String getSexyPhoto() {
+        return imageResolverService.getRandomPhoto();
+    }
+
+    @AllArgsConstructor
+    @Data
+    private static class ImageUrlDto {
+        private String url;
+    }
 
     @CrossOrigin
     @GetMapping(value = "/image/{id}", produces = MediaType.IMAGE_JPEG_VALUE)
-    public @ResponseBody
-    byte[] exposeImages(@PathVariable int id) throws IOException {
+    public @ResponseBody byte[] exposeImages(@PathVariable int id) throws IOException {
         System.out.println(id);
 
         File initialFile;
