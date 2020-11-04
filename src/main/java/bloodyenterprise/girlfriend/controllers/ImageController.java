@@ -24,12 +24,6 @@ public class ImageController {
         return imageResolverService.getRandomPhoto();
     }
 
-    @AllArgsConstructor
-    @Data
-    private static class ImageUrlDto {
-        private String url;
-    }
-
     @CrossOrigin
     @GetMapping(value = "/image/{id}", produces = MediaType.IMAGE_JPEG_VALUE)
     public @ResponseBody byte[] exposeImages(@PathVariable int id) throws IOException {

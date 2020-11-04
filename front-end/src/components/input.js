@@ -26,19 +26,14 @@ const Input = ({messages, setMessages, sendMessage}) => {
                     console.log(text)
                 })} value={text} className="form" name="message" id="message"/>
                 <br/>
-                <button
-                    onClick={() => {
-                        sendMessage(setIsThinking, text, setMessages, messages)
-                    }}
-                    className="button" type="submit" value="Ляпнуть не подумав...">
-                    Ляпнуть не подумав...
+                <button onClick={() => sendMessage(setIsThinking, text, setMessages, messages)}
+                        className="button-6"><span>Ляпнуть не подумав...</span>
                 </button>
-
                 <span className="bigFont"
                       onClick={() => {
                           fetch("http://localhost:8080/getSexyPhoto")
                               .then(response => response.text())
-                              .then(url=> {
+                              .then(url => {
                                   setMessages([{
                                       name: "Марго",
                                       image: url
