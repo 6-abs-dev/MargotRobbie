@@ -54,22 +54,30 @@ code {
   justify-content: center;
   margin-left: 100px;
   padding: 10px;
-  /*///*/
-  transition: transform 2s linear;
-  /*opacity:0; !*Элемент полностью прозрачный (невидимый)*!*/
-  /*!*transition: 1s; !*Скорость перехода состояния элемента*!*!*/
-  animation: show 2s 1; /* Указываем название анимации, её время и количество повторов*/
-  animation-fill-mode: forwards; /* Чтобы элемент оставался в конечном состоянии анимации */
-  /*animation-delay: 1s; !* Задержка перед началом *!*/
-  /*///*/
+  transition: transform 2s ease;
+  animation: translate 1s 1;
+  animation-fill-mode: forwards;
 }
 
-@keyframes show{
-  0%{
+.message:nth-of-type(2){
+  animation: translate 1s 1, appear 2s 1;
+}
+
+@keyframes translate{
+  from{
     transform: translateY(-70%);
   }
-  100% {
+  to {
     transform: translateY(0);
+  }
+}
+
+@keyframes appear{
+  from{
+    opacity: 0;
+  }
+  80% {
+    opacity: 1;
   }
 }
 
