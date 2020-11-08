@@ -81,6 +81,13 @@ code {
   }
 }
 
+span#status {
+  font-size: 60px;
+  position: absolute;
+  top: 27%;
+  left: 32%;
+}
+
 .button{
   background-color: white;
   padding: 12px 28px;

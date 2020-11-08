@@ -87,6 +87,9 @@ const Input = ({messages, setMessages, sendMessage}) => {
                          setImage(FirstMargoImg);
                      }
                  }}/>
+
+            <span id="status">	&#128523;</span>
+            {/*&#129300; 	&#128522; &#128519; &#129392; &#128525; &#129322; &#129395;*/}
             <div>
                 <h1>Привет красавчик... Я <strong>Марго</strong>.</h1>
                 {isThinking ? loaderComponent() : inputFrame()}
