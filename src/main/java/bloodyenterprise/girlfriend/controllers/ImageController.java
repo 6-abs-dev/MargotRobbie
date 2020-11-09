@@ -33,22 +33,22 @@ public class ImageController {
 
         switch (id) {
             case 1:
-                initialFile = new File("C:\\Users\\brave_dev\\Desktop\\girlfriend\\girlfriend\\src\\main\\resources\\static\\4.jpg");
+                initialFile = new File("C:\\Users\\brave_dev\\Desktop\\girlfriend\\girlfriend\\src\\main\\resources\\static\\1.jpg");
                 break;
             case 2:
-                initialFile = new File("C:\\Users\\brave_dev\\Desktop\\girlfriend\\girlfriend\\src\\main\\resources\\static\\4.jpg");
+                initialFile = new File("C:\\Users\\brave_dev\\Desktop\\girlfriend\\girlfriend\\src\\main\\resources\\static\\5.jpg");
                 break;
             case 3:
                 initialFile = new File("C:\\Users\\brave_dev\\Desktop\\girlfriend\\girlfriend\\src\\main\\resources\\static\\3.jpg");
                 break;
             case 4:
-                initialFile = new File("C:\\Users\\brave_dev\\Desktop\\girlfriend\\girlfriend\\src\\main\\resources\\static\\3.jpg");
+                initialFile = new File("C:\\Users\\brave_dev\\Desktop\\girlfriend\\girlfriend\\src\\main\\resources\\static\\4.jpg");
                 break;
             case 5:
-                initialFile = new File("C:\\Users\\brave_dev\\Desktop\\girlfriend\\girlfriend\\src\\main\\resources\\static\\3.jpg");
+                initialFile = new File("C:\\Users\\brave_dev\\Desktop\\girlfriend\\girlfriend\\src\\main\\resources\\static\\5.jpg");
                 break;
             default:
-                initialFile = new File("C:\\Users\\brave_dev\\Desktop\\girlfriend\\girlfriend\\src\\main\\resources\\static\\4.jpg");
+                initialFile = new File("C:\\Users\\brave_dev\\Desktop\\girlfriend\\girlfriend\\src\\main\\resources\\static\\5.jpg");
         }
         InputStream in = FileUtils.openInputStream(initialFile);
         return IOUtils.toByteArray(in);
