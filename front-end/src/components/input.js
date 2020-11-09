@@ -8,6 +8,7 @@ const Input = ({messages, setMessages, sendMessage}) => {
     const [text, setText] = useState("Пиши сюда...")
     const [isThinking, setIsThinking] = useState(false)
     const [image, setImage] = useState(FirstMargoImg)
+    const [status, setStatus] = useState('\u{1F634}')
 
     const loaderComponent = () => {
         return (
@@ -26,7 +27,7 @@ const Input = ({messages, setMessages, sendMessage}) => {
                     console.log(text)
                 })} value={text} className="form" name="message" id="message"/>
                 <br/>
-                <button onClick={() => sendMessage(setIsThinking, text, setMessages, messages)}
+                <button onClick={() => sendMessage(setIsThinking, text, setMessages, messages, setStatus)}
                         className="button-6"><span>Ляпнуть не подумав...</span>
                 </button>
                 <span className="bigFont"
@@ -88,7 +89,7 @@ const Input = ({messages, setMessages, sendMessage}) => {
                      }
                  }}/>
 
-            <span id="status">	&#128523;</span>
+            <span id="status">{status}</span>
             {/*&#129300; 	&#128522; &#128519; &#129392; &#128525; &#129322; &#129395;*/}
             <div>
                 <h1>Привет красавчик... Я <strong>Марго</strong>.</h1>
