@@ -46,4 +46,12 @@ public class ResponseController {
         Thread.sleep(1000);
         return responseService.getRandomNumber();
     }
+
+    @SneakyThrows
+    @CrossOrigin
+    @GetMapping(value = "/getCurrentDate")
+    public String getCurrentDate(){
+        Thread.sleep(1000);
+        return responseService.getCurrentDate();
+    }
 }

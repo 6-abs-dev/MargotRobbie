@@ -50,12 +50,13 @@ const Input = ({messages, setMessages, sendMessage}) => {
                           fetch('http://localhost:8080/getRandomNumber')
                               .then((res) => {
                                   return res.json()
+
                               })
                               .then((y) => {
+                                  console.log(y)
                                   setMessages([{
                                       name: "Марго",
-                                      message: `Я загадала ${Math.floor(Math.random() * 1000)}`
-
+                                      message: `Я загадала ${y}`
                                   }, ...messages])
                                   setIsThinking(false)
                                   setStatus('\u{1F60B}');
@@ -78,10 +79,20 @@ const Input = ({messages, setMessages, sendMessage}) => {
                       }}>&#9748;</span>
                 <span className="bigFont"
                       onClick={() => {
-                          setMessages([{
-                              name: "Марго",
-                              message: `Сейчас ${new Date().toLocaleString("ru-RU")}`
-                          }, ...messages])
+                          setIsThinking(true)
+                          setStatus('\u{1F914}')
+                          fetch('http://localhost:8080/getCurrentDate')
+                              .then((res) => {
+                                  return res.text()
+                              })
+                              .then((y) => {
+                                  setMessages([{
+                                      name: "Марго",
+                                      message: `Сейчас ${y}`
+                                  }, ...messages])
+                                  setIsThinking(false)
+                                  setStatus('\u{1F60B}');
+                              })
                       }}>&#128197;</span>
             </Fragment>
         )
