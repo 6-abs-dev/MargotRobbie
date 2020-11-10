@@ -53,6 +53,11 @@ public class MockService implements ResponseService {
     }
 
     @Override
+    public int getRandomNumber() {
+        return (int) (Math.random() * 999 + 100);
+    }
+
+    @Override
     public String getWeather() {
         return "{\n" +
                 "    \"now\": 1602927791,\n" +

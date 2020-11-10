@@ -13,4 +13,5 @@ public interface ResponseService {
 
     List<Message> getHistory();
 
+    int getRandomNumber();
 }

@@ -45,11 +45,21 @@ const Input = ({messages, setMessages, sendMessage}) => {
 
                 <span className="bigFont"
                       onClick={() => {
-                          setMessages([{
-                              name: "Марго",
-                              message: `Я загадала ${Math.floor(Math.random() * 1000)}`
+                          setIsThinking(true)
+                          setStatus('\u{1F914}')
+                          fetch('http://localhost:8080/getRandomNumber')
+                              .then((res) => {
+                                  return res.json()
+                              })
+                              .then((y) => {
+                                  setMessages([{
+                                      name: "Марго",
+                                      message: `Я загадала ${Math.floor(Math.random() * 1000)}`
 
-                          }, ...messages])
+                                  }, ...messages])
+                                  setIsThinking(false)
+                                  setStatus('\u{1F60B}');
+                              })
                       }}>&#127920;</span>
                 <span className="bigFont"
                       onClick={() => {

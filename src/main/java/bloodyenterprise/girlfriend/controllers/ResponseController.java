@@ -38,4 +38,12 @@ public class ResponseController {
     public String getWeather(){
         return responseService.getWeather();
     }
+
+    @SneakyThrows
+    @CrossOrigin
+    @GetMapping(value = "/getRandomNumber")
+    public int getRandomNumber(){
+        Thread.sleep(1000);
+        return responseService.getRandomNumber();
+    }
 }
