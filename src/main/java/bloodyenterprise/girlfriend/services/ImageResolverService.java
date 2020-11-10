@@ -22,7 +22,7 @@ public class ImageResolverService {
             case 5:
                 return "http://localhost:8080/image/5";
         }
-        return "http://localhost:8080/image/3";
+        return "http://localhost:8080/image/6";
     }
 
     private int getPseudoRandomNumber(){

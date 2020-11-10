@@ -36,7 +36,7 @@ public class ImageController {
                 initialFile = new File("C:\\Users\\brave_dev\\Desktop\\girlfriend\\girlfriend\\src\\main\\resources\\static\\1.jpg");
                 break;
             case 2:
-                initialFile = new File("C:\\Users\\brave_dev\\Desktop\\girlfriend\\girlfriend\\src\\main\\resources\\static\\5.jpg");
+                initialFile = new File("C:\\Users\\brave_dev\\Desktop\\girlfriend\\girlfriend\\src\\main\\resources\\static\\2.jpg");
                 break;
             case 3:
                 initialFile = new File("C:\\Users\\brave_dev\\Desktop\\girlfriend\\girlfriend\\src\\main\\resources\\static\\3.jpg");
@@ -48,7 +48,7 @@ public class ImageController {
                 initialFile = new File("C:\\Users\\brave_dev\\Desktop\\girlfriend\\girlfriend\\src\\main\\resources\\static\\5.jpg");
                 break;
             default:
-                initialFile = new File("C:\\Users\\brave_dev\\Desktop\\girlfriend\\girlfriend\\src\\main\\resources\\static\\5.jpg");
+                initialFile = new File("C:\\Users\\brave_dev\\Desktop\\girlfriend\\girlfriend\\src\\main\\resources\\static\\6.jpg");
         }
         InputStream in = FileUtils.openInputStream(initialFile);
         return IOUtils.toByteArray(in);
